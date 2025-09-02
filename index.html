@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio ของฉัน</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- ส่วนหัว (Header) -->
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <!-- อาจใส่รูปโปรไฟล์เล็กๆ ตรงนี้ -->
+                <div class="h-10 w-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 font-bold">JD</div>
+                <h1 class="text-xl font-bold">ชื่อของคุณ</h1>
+            </div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">เกี่ยวกับฉัน</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">ติดต่อ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ส่วนหลัก (Main Content - Hero Section) -->
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="text-center max-w-4xl w-full">
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight">ยินดีต้อนรับสู่ Portfolio ของฉัน</h2>
+            <p class="text-lg sm:text-xl text-gray-600 mb-12">นี่คือตัวอย่างผลงานที่ผมคัดสรรมาสำหรับบริษัทที่คุณสนใจ</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <!-- ปุ่มสำหรับบริษัทที่ 1 -->
+                <button class="bg-white border-2 border-transparent hover:border-blue-500 transform transition-all duration-300 hover:scale-105 shadow-lg rounded-xl p-8 cursor-pointer">
+                    <div class="flex flex-col items-center">
+                        <div class="h-16 w-16 bg-gray-200 rounded-full mb-4 flex items-center justify-center text-gray-500 font-bold text-2xl">A</div>
+                        <span class="text-xl font-semibold mb-2">Portfolio สำหรับบริษัท A</span>
+                        <p class="text-gray-500 text-sm">ดูผลงานที่ออกแบบมาเป็นพิเศษสำหรับบริษัท A</p>
+                    </div>
+                </button>
+
+                <!-- ปุ่มสำหรับบริษัทที่ 2 -->
+                <button class="bg-white border-2 border-transparent hover:border-blue-500 transform transition-all duration-300 hover:scale-105 shadow-lg rounded-xl p-8 cursor-pointer">
+                    <div class="flex flex-col items-center">
+                        <div class="h-16 w-16 bg-gray-200 rounded-full mb-4 flex items-center justify-center text-gray-500 font-bold text-2xl">B</div>
+                        <span class="text-xl font-semibold mb-2">Portfolio สำหรับบริษัท B</span>
+                        <p class="text-gray-500 text-sm">ดูผลงานที่ออกแบบมาเป็นพิเศษสำหรับบริษัท B</p>
+                    </div>
+                </button>
+
+                <!-- ปุ่มสำหรับบริษัทที่ 3 -->
+                <button class="bg-white border-2 border-transparent hover:border-blue-500 transform transition-all duration-300 hover:scale-105 shadow-lg rounded-xl p-8 cursor-pointer">
+                    <div class="flex flex-col items-center">
+                        <div class="h-16 w-16 bg-gray-200 rounded-full mb-4 flex items-center justify-center text-gray-500 font-bold text-2xl">C</div>
+                        <span class="text-xl font-semibold mb-2">Portfolio สำหรับบริษัท C</span>
+                        <p class="text-gray-500 text-sm">ดูผลงานที่ออกแบบมาเป็นพิเศษสำหรับบริษัท C</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- ส่วนท้าย (Footer) -->
+    <footer class="bg-gray-800 text-white py-6 mt-auto">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2">&copy; 2024 Apirak. สงวนลิขสิทธิ์</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="hover:text-blue-400 transition-colors duration-300">LinkedIn</a>
+                <a href="#" class="hover:text-blue-400 transition-colors duration-300">GitHub</a>
+                <a href="#" class="hover:text-blue-400 transition-colors duration-300">อีเมล</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
