@@ -26,7 +26,7 @@
         }
     </style>
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="bg-gradient-to-br from-blue-100 via-white to-yellow-50 min-h-screen font-sans">
     <!-- Header -->
     <header class="bg-white shadow-sm py-4">
         <div class="container mx-auto px-4 flex items-center justify-between">
@@ -47,57 +47,43 @@
     </header>
 
     <!-- Main Content -->
-    <main class="flex-grow p-8">
-        <div class="container mx-auto max-w-3xl bg-white rounded-xl shadow-lg p-8">
-            <!-- Profile Section -->
-            <div class="flex flex-col md:flex-row items-center md:items-start gap-8 mb-8">
-                <div class="flex-shrink-0">
-                    <img src="images\481208160_2214021499096650_1160371878743918073_n.jpg" alt="Profile Image" class="rounded-full w-40 h-40 object-cover border-4 border-blue-600 shadow-md">
-                </div>
-                <div class="flex-1 text-center md:text-left">
-                    <h2 class="text-3xl font-bold text-gray-800">อภิรักษ์ บุญไชย</h2>
-                    <h3 class="text-xl text-blue-700 font-semibold tracking-wide mt-1">Apirak Boonchai</h3>
-                    <p class="text-gray-500 mt-1">ชื่อเล่น: <span class="font-medium">ต่อ</span></p>
-                    <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-4 text-gray-700 text-base">
-                        <div class="flex items-center gap-2"><span>🎂</span> อายุ 22 ปี (12 พฤษภาคม 2546)</div>
-                        <div class="flex items-center gap-2"><span>🏳️</span> สัญชาติไทย</div>
-                    </div>
-                    <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-2 text-gray-700 text-base">
-                        <div class="flex items-center gap-2"><span>📱</span> 064-053-1715</div>
-                        <div class="flex items-center gap-2"><span>📧</span> aboonchai207@gmail.com</div>
-                        <div class="flex items-center gap-2"><span>📍</span> 231 หมู่ที่ 5 ต.โนนหนามแท่ง อ.เมือง จ.อำนาจเจริญ 37000</div>
-                    </div>
-                </div>
+    <main class="max-w-4xl mx-auto my-8 bg-white rounded-2xl shadow-2xl p-8 flex flex-col md:flex-row gap-8">
+        <!-- Left Column -->
+        <section class="md:w-1/3 flex flex-col items-center gap-6">
+            <img src="images/481208160_2214021499096650_1160371878743918073_n.jpg" alt="Profile" class="rounded-full w-36 h-36 border-4 border-blue-400 shadow-lg">
+            <div class="bg-blue-50 rounded-xl p-4 w-full text-center shadow">
+                <h2 class="text-xl font-bold text-blue-800">อภิรักษ์ บุญไชย</h2>
+                <h3 class="text-blue-600 font-semibold">Apirak Boonchai</h3>
+                <p class="text-gray-600 mt-2">ชื่อเล่น: <span class="font-medium">ต่อ</span></p>
             </div>
-
-            <!-- Education Section -->
-            <div class="mb-8">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-700 flex items-center gap-2">📚 ประวัติการศึกษา</h3>
-                <div class="bg-gray-100 rounded-lg p-5 mb-4">
-                    <div class="flex items-center gap-2 mb-1"><span>🎓</span> <span class="font-semibold">ปริญญาตรี (กำลังศึกษา)</span></div>
-                    <div class="ml-7">
-                        <div>สาขา: เทคโนโลยีสารสนเทศและดิจิทัล (กลุ่ม Data Science & AI)</div>
-                        <div>สถานศึกษา: มหาวิทยาลัยกาฬสินธุ์</div>
-                        <div>ปีการศึกษา: 2565 – ปัจจุบัน</div>
-                        <div>GPA: <span class="font-bold text-blue-700">2.72</span></div>
-                    </div>
-                </div>
-                <div class="bg-gray-100 rounded-lg p-5">
-                    <div class="flex items-center gap-2 mb-1"><span>🎨</span> <span class="font-semibold">มัธยมศึกษาตอนปลาย </span></div>
-                    <div class="ml-7">
-                        <div>สายการเรียน: วิทยาศาสตร์และคณิตศาสตร์</div>
-                        <div>สถานศึกษา: โรงเรียนราชประชานุเคราะห์54 จังหวัดอำนาจเจริญ</div>
-                        <div>ปีการศึกษา: 2562 – 2564</div>
-                        <div>GPA: <span class="font-bold text-blue-700">3.33</span></div>
-                    </div>
-                </div>
+            <div class="bg-yellow-50 rounded-xl p-4 w-full shadow">
+                <h4 class="font-semibold text-blue-700 mb-2 flex items-center gap-2"><span>📄</span> ข้อมูลส่วนตัว</h4>
+                <ul class="text-gray-700 space-y-1 text-sm">
+                    <li>🎂 อายุ 22 ปี (12 พ.ค. 2546)</li>
+                    <li>🏳️ สัญชาติไทย</li>
+                    <li>📱 064-053-1715</li>
+                    <li>📧 aboonchai207@gmail.com</li>
+                    <li>📍 231 หมู่ที่ 5 ต.โนนหนามแท่ง อ.เมือง จ.อำนาจเจริญ</li>
+                </ul>
             </div>
-
-            <!-- Skills Section -->
-            <div class="mb-8">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-700 flex items-center gap-2">
-                    ⚡ ทักษะความสามารถ
-                </h3>
+        </section>
+        <!-- Right Column -->
+        <section class="md:w-2/3 flex flex-col gap-6">
+            <div class="bg-blue-100 rounded-xl p-5 shadow">
+                <h4 class="font-semibold text-blue-800 mb-2 flex items-center gap-2"><span>📚</span> ประวัติการศึกษา</h4>
+                <ul class="text-gray-700 text-sm space-y-2">
+                    <li>
+                        <span class="font-bold">ปริญญาตรี (กำลังศึกษา):</span> มหาวิทยาลัยกาฬสินธุ์<br>
+                        <span class="ml-4">สาขา: เทคโนโลยีสารสนเทศและดิจิทัล (Data Science & AI), GPA: 2.72</span>
+                    </li>
+                    <li>
+                        <span class="font-bold">มัธยมปลาย:</span> ราชประชานุเคราะห์54 จ.อำนาจเจริญ<br>
+                        <span class="ml-4">สายวิทย์-คณิต, GPA: 3.33</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-yellow-100 rounded-xl p-5 shadow">
+                <h4 class="font-semibold text-yellow-800 mb-2 flex items-center gap-2"><span>⚡</span> ทักษะความสามารถ</h4>
                 <div class="bg-gray-100 rounded-lg p-5">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div class="space-y-4">
@@ -246,27 +232,23 @@
                     </div>
                 </div>
             </div>
-
-            <!-- กิจกรรมระหว่างศึกษา (ย้ายมาอยู่ล่างสุดก่อน Footer Contact) -->
-            <div class="mb-8">
-                <h3 class="text-2xl font-semibold mb-4 text-blue-700 flex items-center gap-2">
-                    <span>🌟</span> กิจกรรมระหว่างศึกษา
-                </h3>
-                <ul class="list-disc ml-8 text-gray-700 space-y-1 bg-blue-50 rounded-lg p-5 shadow">
-                    <li>เข้าร่วมแข่งขันโครงงานด้าน Data Science & AI ในงานมหกรรมวิชาการระดับมหาวิทยาลัย</li>
-                    <li>เป็นสมาชิกชมรมเทคโนโลยีสารสนเทศ ดูแลกิจกรรมอบรม Python เบื้องต้น</li>
-                    <li>อาสาสมัครช่วยงาน Open House มหาวิทยาลัยกาฬสินธุ์</li>
-                    <li>เข้าร่วมอบรมและ Workshop ด้าน Machine Learning และ IoT</li>
+            <div class="bg-blue-50 rounded-xl p-5 shadow">
+                <h4 class="font-semibold text-blue-700 mb-2 flex items-center gap-2"><span>🌟</span> กิจกรรมระหว่างศึกษา</h4>
+                <ul class="list-disc ml-6 text-gray-700 text-sm space-y-1">
+                    <li>เข้าร่วมแข่งขันโครงงานด้าน Data Science & AI</li>
+                    <li>เป็นสมาชิกชมรมเทคโนโลยีสารสนเทศ</li>
+                    <li>อาสาสมัครช่วยงาน Open House</li>
+                    <li>อบรมและ Workshop ด้าน Machine Learning และ IoT</li>
                 </ul>
             </div>
-
-            <!-- Footer Contact -->
-            <div class="text-center mt-8 text-gray-500 text-sm">
-                <div>บริษัท บีแทสก์ คอนซัลติ้ง จำกัด</div>
-                <div>© 2024 ชยากร สายกระสุน. สงวนลิขสิทธิ์</div>
-            </div>
-        </div>
+        </section>
     </main>
+
+    <!-- Footer Contact -->
+    <div class="text-center mt-8 text-gray-500 text-sm">
+        <div>บริษัท บีแทสก์ คอนซัลติ้ง จำกัด</div>
+        <div>© 2024 ชยากร สายกระสุน. สงวนลิขสิทธิ์</div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-6 mt-auto">
