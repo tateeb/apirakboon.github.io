@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio สำหรับบริษัท B</title>
+    <title>เรซูเม่ อภิรักษ์ บุญไชย | บริษัท เอ็ม เอฟ อี ซี จำกัด (มหาชน)</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -13,18 +13,21 @@
             background-color: #f3f4f6;
             color: #1f2937;
         }
-        .skill-tag {
-            background-color: #e5e7eb;
-            color: #4b5563;
-            padding: 0.25rem 0.75rem;
+        .skill-bar-bg {
+            background: #e5e7eb;
             border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 500;
+            height: 1rem;
+            width: 100%;
+        }
+        .skill-bar-fill {
+            background: #2563eb;
+            border-radius: 9999px;
+            height: 1rem;
         }
     </style>
 </head>
-<body class="flex flex-col min-h-screen">
-    <!-- ส่วนหัว (Header) -->
+<body class="bg-gradient-to-br from-blue-100 via-white to-yellow-50 min-h-screen font-sans">
+    <!-- Header -->
     <header class="bg-white shadow-sm py-4">
         <div class="container mx-auto px-4 flex items-center justify-between">
             <div class="flex items-center space-x-3">
@@ -35,187 +38,237 @@
                     <span>กลับหน้าหลัก</span>
                 </a>
             </div>
-            <h1 class="text-xl font-bold">Portfolio สำหรับบริษัท A</h1>
-            <nav>
-                <ul class="flex space-x-6">
-                    <li><a href="about.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">เกี่ยวกับฉัน</a></li>
-                    <li><a href="cont.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">ติดต่อ</a></li>
-                </ul>
-            </nav>
+            <h1 class="text-xl font-bold">บริษัท เอ็ม เอฟ อี ซี จำกัด (มหาชน)</h1>
+            <div>
+                <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300 mr-2">พิมพ์เรซูเม่</button>
+                <a href="#" id="download-pdf-btn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">ดาวน์โหลด PDF</a>
+            </div>
         </div>
     </header>
 
-    <!-- ส่วนหลัก (Main Content) -->
-    <main class="flex-grow p-8">
-        <div class="container mx-auto max-w-4xl bg-white rounded-xl shadow-lg p-8">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-gray-800">ชื่อของคุณ</h2>
-                <p class="text-xl text-blue-600 mt-2">นักพัฒนาโปรแกรม</p>
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto my-8 bg-white rounded-2xl shadow-2xl p-8 flex flex-col md:flex-row gap-8">
+        <!-- Left Column -->
+        <section class="md:w-1/3 flex flex-col items-center gap-6">
+            <img src="images/481208160_2214021499096650_1160371878743918073_n.jpg" alt="Profile" class="rounded-full w-36 h-36 border-4 border-blue-400 shadow-lg">
+            <div class="bg-blue-50 rounded-xl p-4 w-full text-center shadow">
+                <h2 class="text-xl font-bold text-blue-800">อภิรักษ์ บุญไชย</h2>
+                <h3 class="text-blue-600 font-semibold">Apirak Boonchai</h3>
+                <p class="text-gray-600 mt-2">ชื่อเล่น: <span class="font-medium">ต่อ</span></p>
             </div>
-            
-            <!-- ส่วนสรุปประวัติ - เพิ่มฟีเจอร์ Gemini API
-            <div class="bg-gray-100 rounded-lg p-6 mb-8">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-700">สรุปประวัติ ✨</h3>
-                <p class="text-gray-600 mb-4">
-                    คุณสามารถเขียนสรุปประวัติแบบร่างได้ที่นี่ และให้ Gemini API ช่วยปรับปรุงให้เป็นมืออาชีพ
-                </p>
-                <textarea id="draft-bio" class="w-full h-32 p-4 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-blue-500 mb-4 text-gray-800" placeholder="เขียนสรุปประวัติของคุณที่นี่..."></textarea>
-                <div class="flex items-center justify-center">
-                    <button id="generate-bio-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300 transform hover:scale-105">
-                        <span id="button-text">Generate Professional Bio ✨</span>
-                        <div id="loading-indicator" class="hidden h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                    </button>
-                </div>
-                <div id="generated-bio-output" class="mt-6 p-4 bg-white rounded-lg border border-gray-300 hidden">
-                    <h4 class="font-semibold text-lg mb-2">สรุปประวัติแบบมืออาชีพ:</h4>
-                    <p id="bio-text" class="text-gray-700"></p>
-                </div>
-            </div> -->
-
-            <!-- ส่วนทักษะ -->
-            <div class="bg-gray-100 rounded-lg p-6 mb-8">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-700">ทักษะที่สำคัญ</h3>
-                <div class="flex flex-wrap gap-2">
-                    <span class="skill-tag">PHP</span>
-                    <span class="skill-tag">Java Script</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">การจัดการฐานข้อมูล</span>
-                    <span class="skill-tag">React-Native</span>
-                    <span class="skill-tag">Machine Learning</span>
+            <div class="bg-yellow-50 rounded-xl p-4 w-full shadow">
+                <h4 class="font-semibold text-blue-700 mb-2 flex items-center gap-2"><span>📄</span> ข้อมูลส่วนตัว</h4>
+                <ul class="text-gray-700 space-y-1 text-sm">
+                    <li>🎂 อายุ 22 ปี (12 พ.ค. 2546)</li>
+                    <li>🏳️ สัญชาติไทย</li>
+                    <li>📱 064-053-1715</li>
+                    <li>📧 aboonchai207@gmail.com</li>
+                    <li>📍 231 หมู่ที่ 5 ต.โนนหนามแท่ง อ.เมือง จ.อำนาจเจริญ</li>
+                </ul>
+                <div class="mt-4 text-gray-700 text-sm leading-relaxed">
+                    นักศึกษาชั้นปีที่ 4 สาขาวิชาวิทยาการคอมพิวเตอร์ ที่กำลังมองหาโอกาสในการฝึกงานเพื่อนำความรู้และทักษะที่ได้เรียนรู้มาไปประยุกต์ใช้ในการทำงานจริง มีพื้นฐานด้านการพัฒนาโปรแกรม และมีความสนใจเป็นพิเศษในสาขา Data Science และ IoT
+                    พร้อมที่จะเรียนรู้และพัฒนาทักษะใหม่ๆ ให้เหมาะสมกับการทำงานจริง เพื่อสร้างสรรค์และพัฒนาซอฟต์แวร์ที่มีประสิทธิภาพให้กับองค์กร
                 </div>
             </div>
-
-            <!-- ส่วนโปรเจกต์ -->
-            <div class="bg-gray-100 rounded-lg p-6 mb-8">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-700">ผลงานและโปรเจกต์</h3>
-                <div class="space-y-6">
-                    <div>
-                        <h4 class="text-xl font-semibold text-gray-800">โปรเจกต์: [ชื่อโปรเจกต์ Machine Learning]</h4>
-                        <p class="text-gray-600 mt-1">
-                            พัฒนาโมเดล Machine Learning เพื่อ [ระบุเป้าหมายของโปรเจกต์ เช่น คาดการณ์ราคาหุ้น, จำแนกรูปภาพ]
-                            โดยใช้ Python และไลบรารีที่เกี่ยวข้อง
-                        </p>
-                        <ul class="list-disc list-inside text-gray-500 mt-2">
-                            <li>**เทคโนโลยี:** Python, [ระบุไลบรารี เช่น TensorFlow, Scikit-learn]</li>
-                            <li>**ผลลัพธ์:** [ระบุผลลัพธ์ที่วัดผลได้ เช่น ความแม่นยำของโมเดล]</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold text-gray-800">โปรเจกต์: [ชื่อโปรเจกต์ React-Native]</h4>
-                        <p class="text-gray-600 mt-1">
-                            สร้างแอปพลิเคชันมือถือด้วย React-Native เพื่อ [ระบุเป้าหมายของแอป]
-                            โดยมีการเชื่อมต่อกับฐานข้อมูลเพื่อการจัดการข้อมูลผู้ใช้
-                        </p>
-                        <ul class="list-disc list-inside text-gray-500 mt-2">
-                            <li>**เทคโนโลยี:** React-Native, JavaScript, การจัดการฐานข้อมูล</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ส่วนประวัติการศึกษา -->
-            <div class="bg-gray-100 rounded-lg p-6 mb-8">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-700">ประวัติการศึกษา</h3>
-                <ul class="list-disc list-inside space-y-2 text-gray-600">
-                    <li>[ชื่อสถาบันการศึกษา], [สาขาวิชา], [ปีที่สำเร็จการศึกษา]</li>
+        </section>
+        <!-- Right Column -->
+        <section class="md:w-2/3 flex flex-col gap-6">
+            <div class="bg-blue-100 rounded-xl p-5 shadow">
+                <h4 class="font-semibold text-blue-800 mb-2 flex items-center gap-2"><span>📚</span> ประวัติการศึกษา</h4>
+                <ul class="text-gray-700 text-sm space-y-2">
+                    <li>
+                        <span class="font-bold">ปริญญาตรี (กำลังศึกษา):</span> มหาวิทยาลัยกาฬสินธุ์<br>
+                        <span class="ml-4">สาขา: เทคโนโลยีสารสนเทศและดิจิทัล (Data Science & AI), GPA: 2.72</span>
+                    </li>
+                    <li>
+                        <span class="font-bold">มัธยมปลาย:</span> ราชประชานุเคราะห์54 จ.อำนาจเจริญ<br>
+                        <span class="ml-4">สายวิทย์-คณิต, GPA: 3.33</span>
+                    </li>
                 </ul>
             </div>
-            
-            <!-- ส่วนกิจกรรมในมหาวิทยาลัย -->
-            <div class="bg-gray-100 rounded-lg p-6">
-                <h3 class="text-2xl font-semibold mb-4 text-gray-700">กิจกรรมในมหาวิทยาลัย</h3>
-                <ul class="list-disc list-inside space-y-2 text-gray-600">
-                    <li>[ชื่อกิจกรรมที่เข้าร่วม เช่น ประธานชมรม, โครงการอาสาสมัคร]</li>
-                    <li>[รายละเอียดของบทบาทและสิ่งที่ได้รับจากกิจกรรมนั้น]</li>
+            <div class="bg-yellow-100 rounded-xl p-5 shadow">
+                <h4 class="font-semibold text-yellow-800 mb-2 flex items-center gap-2"><span>⚡</span> ทักษะความสามารถ</h4>
+                <div class="bg-gray-100 rounded-lg p-5">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="space-y-4">
+                            <div class="font-semibold mb-2 flex items-center gap-2">
+                                <span>💻</span> ภาษาโปรแกรม & Frameworks
+                            </div>
+                            <div>
+                                <div class="flex justify-between">
+                                    <span>PHP</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="width:80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between">
+                                    <span>JavaScript</span>
+                                    <span>70%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="width:70%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between">
+                                    <span>Python</span>
+                                    <span>60%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="width:60%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between">
+                                    <span>C/C++</span>
+                                    <span>50%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="width:50%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between">
+                                    <span>React-Native</span>
+                                    <span>60%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="width:60%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="font-semibold mb-2 flex items-center gap-2">
+                                <span>🔧</span> เทคโนโลยี & Tools
+                            </div>
+                            <div>
+                                <div class="flex justify-between">
+                                    <span>Machine Learning</span>
+                                    <span>70%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="width:70%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between">
+                                    <span>การจัดการฐานข้อมูล (SQL)</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="width:80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between">
+                                    <span>Git & GitHub</span>
+                                    <span>70%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="width:70%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between">
+                                    <span>Arduino Uno</span>
+                                    <span>60%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="width:60%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between">
+                                    <span>ESP32</span>
+                                    <span>60%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="width:60%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="font-semibold mb-2 flex items-center gap-2">
+                                <span>🎨</span> โปรแกรม & ทักษะเสริม
+                            </div>
+                            <div>
+                                <div class="flex justify-between">
+                                    <span>Adobe Photoshop</span>
+                                    <span>60%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="width:60%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between">
+                                    <span>Microsoft Office</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="width:80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between">
+                                    <span>การทำงานเป็นทีม</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="width:90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between">
+                                    <span>การสื่อสาร</span>
+                                    <span>70%</span>
+                                </div>
+                                <div class="skill-bar-bg">
+                                    <div class="skill-bar-fill" style="width:85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-blue-50 rounded-xl p-5 shadow">
+                <h4 class="font-semibold text-blue-700 mb-2 flex items-center gap-2"><span>🌟</span> กิจกรรมระหว่างศึกษา</h4>
+                <ul class="list-disc ml-6 text-gray-700 text-sm space-y-1">
+                    <li>ปีการศึกษา 2566 - ทำงานในทีมสโมสรนักศึกษาคณะวิทยาศาสตร์และเทคโนโลยีสุขภาพ ตำแหน่งอนุกรรมการสโมสรนักศึกษา</li>
+                    <li>ปีการศึกษา 2567 - ทำงานในทีมสโมสรนักศึกษาคณะวิทยาศาสตร์และเทคโนโลยีสุขภาพ ตำแหน่งอนุกรรมการสโมสรนักศึกษา</li>
+                    <li>ปีการศึกษา 2568 - ทำงานในทีมสภานักศึกษามหาวิทยาลัยกาฬสินธุ์ ตำแหน่งกรรมการสภานักศึกษา</li>
                 </ul>
             </div>
-            
-        </div>
+        </section>
     </main>
 
-    <!-- ส่วนท้าย (Footer) -->
+    
+
+    <!-- Footer Contact -->
+    <div class="text-center mt-8 text-gray-500 text-sm">
+        <div>บริษัท เอ็ม เอฟ อี ซี จำกัด (มหาชน)</div>
+        <div>© 2024 อภิรักษ์ บุญไชย. สงวนลิขสิทธิ์</div>
+    </div>
+
+    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-6 mt-auto">
         <div class="container mx-auto px-4 text-center">
-            <p class="mb-2">&copy; 2024 ชื่อของคุณ. สงวนลิขสิทธิ์</p>
             <div class="flex justify-center space-x-4">
                 <a href="#" class="hover:text-blue-400 transition-colors duration-300">LinkedIn</a>
                 <a href="#" class="hover:text-blue-400 transition-colors duration-300">GitHub</a>
-                <a href="#" class="hover:text-blue-400 transition-colors duration-300">อีเมล</a>
+                <a href="mailto:chayagorn102546@gmail.com" class="hover:text-blue-400 transition-colors duration-300">อีเมล</a>
             </div>
         </div>
     </footer>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const generateBtn = document.getElementById('generate-bio-btn');
-            const buttonText = document.getElementById('button-text');
-            const loadingIndicator = document.getElementById('loading-indicator');
-            const draftBioTextarea = document.getElementById('draft-bio');
-            const generatedBioOutput = document.getElementById('generated-bio-output');
-            const bioText = document.getElementById('bio-text');
-
-            generateBtn.addEventListener('click', async () => {
-                const draftBio = draftBioTextarea.value.trim();
-                if (!draftBio) {
-                    // This alert is a fallback since we cannot use window.alert
-                    // A proper UI modal should be used in a real application
-                    console.error('กรุณาเขียนสรุปประวัติแบบร่างก่อนครับ/ค่ะ');
-                    alert('กรุณาเขียนสรุปประวัติแบบร่างก่อนครับ/ค่ะ');
-                    return;
-                }
-
-                // Show loading state
-                buttonText.classList.add('hidden');
-                loadingIndicator.classList.remove('hidden');
-                generateBtn.disabled = true;
-
-                try {
-                    const prompt = `ปรับปรุงประวัติส่วนตัวต่อไปนี้ให้เป็นสรุปประวัติสำหรับผู้สมัครงานในตำแหน่งนักพัฒนาโปรแกรม: ${draftBio}`;
-                    const payload = {
-                        contents: [{
-                            parts: [{ text: prompt }]
-                        }],
-                        // Use search grounding to ensure the response is factual and relevant
-                        tools: [{ "google_search": {} }],
-                        systemInstruction: {
-                            parts: [{ text: "คุณคือผู้เชี่ยวชาญด้านการเขียนเรซูเม่และโปรไฟล์มืออาชีพ ให้คำแนะนำและปรับปรุงประวัติส่วนตัวที่ได้รับให้มีความน่าสนใจและเป็นมืออาชีพที่สุด" }]
-                        },
-                    };
-                    
-                    const apiKey = "";
-                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (!response.ok) {
-                        const errorData = await response.json();
-                        throw new Error(`API error: ${JSON.stringify(errorData)}`);
-                    }
-
-                    const result = await response.json();
-                    const candidate = result.candidates?.[0];
-                    if (candidate && candidate.content?.parts?.[0]?.text) {
-                        const generatedText = candidate.content.parts[0].text;
-                        bioText.textContent = generatedText;
-                        generatedBioOutput.classList.remove('hidden');
-                    } else {
-                        bioText.textContent = "ไม่สามารถสร้างสรุปประวัติได้ กรุณาลองใหม่อีกครั้ง";
-                        generatedBioOutput.classList.remove('hidden');
-                    }
-                } catch (error) {
-                    console.error('Error generating bio:', error);
-                    bioText.textContent = 'เกิดข้อผิดพลาดในการสร้างสรุปประวัติ กรุณาลองใหม่อีกครั้งในภายหลัง';
-                    generatedBioOutput.classList.remove('hidden');
-                } finally {
-                    // Hide loading state
-                    buttonText.classList.remove('hidden');
-                    loadingIndicator.classList.add('hidden');
-                    generateBtn.disabled = false;
-                }
-            });
+        // PDF download placeholder (for real PDF export use a library or backend service)
+        document.getElementById('download-pdf-btn').addEventListener('click', () => {
+            alert('ฟีเจอร์ดาวน์โหลด PDF ยังไม่พร้อมใช้งานในขณะนี้');
         });
     </script>
 </body>
